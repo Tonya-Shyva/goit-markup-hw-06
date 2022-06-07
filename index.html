@@ -569,22 +569,27 @@
           <div class="subscribe-content">
             <form id="mail_form" action="#" class="subscribe-form">
               <input
-                type="mail"
+                type="email"
                 name="e-mail"
                 placeholder="E-mail"
-                class="mail-input"
+                class="email-input"
                 required=""
+                id="email_input"
               />
-              <button type="submit" class="btn-subscribe">
-                Подписаться<svg class="send-icon" width="24px" height="24px">
-                  <use href="./images/icons.svg#icon-send"></use>
-                </svg>
-              </button>
+              <label for="email_input">
+                <button type="submit" class="btn-subscribe">
+                  Подписаться<svg class="send-icon" width="24px" height="24px">
+                    <use href="./images/icons.svg#icon-send"></use>
+                  </svg>
+                </button>
+              </label>
             </form>
           </div>
         </div>
       </div>
     </footer>
+
+    <!-- ----- Бэкдроп с модалкой----- -->
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button class="btn-close-modal" data-modal-close>
@@ -592,8 +597,46 @@
             <use href="./images/icons.svg#icon-btn-close"></use>
           </svg>
         </button>
+        <form class="form js-order-form">
+          <p class="form-head">Оставьте свои данные, мы вам перезвоним</p>
+          <div class="form-field">
+            <label for="name_input">Имя</label>
+            <input type="text" name="name" placeholder="" id="name_input" />
+          </div>
+
+          <div class="form-field">
+            <label for="tel_input">Телефон</label>
+            <input type="tel" name="telefon" placeholder="" id="tel_input" />
+          </div>
+
+          <div class="form-field">
+            <label for="mail_input">Почта</label>
+            <input type="email" name="e-mail" placeholder="" class="mail-input" id="mail_input" />
+          </div>
+
+          <div class="form-field">
+            <label for="comment_input">Комментарий</label>
+            <textarea name="comment" class="comment-input" rows="1" id="comment_input">
+Введите текст</textarea
+            >
+          </div>
+
+          <div class="form-checkbox">
+            <input type="checkbox" name="confirm" id="confirm-input" />
+            <label for="confirm-input">Соглашаюсь с рассылкой и принимаю Условия соглашения</label>
+          </div>
+
+          <button type="submit" class="btn-input">Отправить</button>
+        </form>
       </div>
     </div>
     <script src="./js/modal.js"></script>
+    <script>
+      (() => {
+        document
+          .quertySelector('.js-order-form')
+          .addEventListener("submit, e=> {e.preventDefault();new FormData(e.currentTarget).forEach((value, name) =>console.log('${name}: ${value}'),e.currentTarget.reset();          );
+        ,});
+    </script>
   </body>
 </html>

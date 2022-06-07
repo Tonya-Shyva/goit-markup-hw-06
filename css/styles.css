@@ -19,6 +19,10 @@ body {
   background-color: var(--primary-background-color);
 }
 
+textarea {
+  resize: none;
+}
+
 .section {
   margin: 0;
   padding-bottom: 94px;
@@ -237,7 +241,6 @@ p {
 
 .title-hero {
   width: 696px;
-  margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
 
@@ -252,7 +255,8 @@ p {
 /* кнопка заказа услуги */
 
 .order-service,
-.btn-subscribe {
+.btn-subscribe,
+.btn-input {
   display: flex;
 
   min-width: 200px;
@@ -260,6 +264,7 @@ p {
 
   border: 0px;
   border-radius: 4px;
+  margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
   padding: 0;
@@ -268,13 +273,14 @@ p {
   justify-content: center;
   align-items: center;
 
-  color: #ffffff;
-  background-color: var(--accent-color);
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.06em;
+
+  color: #ffffff;
+  background-color: var(--accent-color);
 }
 
 /* -----------БЭКДРОП И МОДАЛЬНОЕ ОКНО ДЛЯ ЗАКАЗА УСЛУГИ---------- */
@@ -348,6 +354,77 @@ p {
 .btn-close-modal:focus > .btn-close-icon {
   fill: #2196f3;
   transition: fill var(--transition-settings);
+}
+/* -------Форма в модалке-------------- */
+
+.form {
+  width: inherit;
+  padding: 40px;
+}
+
+.form-head {
+  margin-bottom: 12px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #212121;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-checkbox {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.form-field input {
+  padding: 11px 12px;
+  cursor: pointer;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  transition: border var(--transition-settings);
+}
+
+.form-field input:hover,
+.form-field input:focus,
+.form-field textarea:hover,
+.form-field textarea:focus {
+  border: 1px solid #2196f3;
+}
+
+.form-field label,
+.form-field textarea {
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1, 17;
+  letter-spacing: 0.01em;
+  color: #757575;
+
+  transition: border var(--transition-settings);
+}
+
+.form-field label {
+  margin-bottom: 4px;
+}
+
+.form-field textarea {
+  height: 120px;
+  padding: 12px 16px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  transition: border var(--transition-settings);
 }
 
 /* Особенности */
@@ -676,9 +753,10 @@ p {
   display: flex;
 }
 
-.mail-input {
+.email-input {
   width: 358px;
-  padding: 15px 295px 15px 16px;
+  height: 50px;
+  padding: 15px 0px 15px 16px;
 
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
@@ -692,6 +770,7 @@ p {
 }
 
 .btn-subscribe {
+  margin-top: 0px;
   margin-left: 12px;
   margin-right: 0px;
 }
