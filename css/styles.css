@@ -578,8 +578,7 @@ p {
 }
 
 .customer-item:hover .icon-fill,
-.customer-item:focus .icon-fill,
-.customer-link:focus .customer-item {
+.customer-item:focus .icon-fill {
   fill: var(--accent-color);
 }
 
